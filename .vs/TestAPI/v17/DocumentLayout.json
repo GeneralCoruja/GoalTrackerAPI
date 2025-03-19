@@ -1,34 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\diomo\\source\\repos\\testapi\\testapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\diomo\\source\\repos\\testapi\\testapi\\controllers\\objectivecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\controllers\\objectivecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\diomo\\source\\repos\\testapi\\testapi\\services\\objectiveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\services\\objectiveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\diomo\\source\\repos\\testapi\\testapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\dhcs1\\repos\\goaltrackerapi\\testapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|c:\\users\\diomo\\source\\repos\\testapi\\database\\models\\objective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|solutionrelative:database\\models\\objective.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\dhcs1\\repos\\goaltrackerapi\\testapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|c:\\users\\diomo\\source\\repos\\testapi\\testapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A0321E2-2BAD-402B-AD32-37745B54CEBB}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|c:\\users\\diomo\\source\\repos\\testapi\\database\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|solutionrelative:database\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|c:\\users\\dhcs1\\repos\\goaltrackerapi\\database\\models\\databasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}|Database\\TestAPI.Database.csproj|solutionrelative:database\\models\\databasesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Program.cs",
-              "RelativeDocumentMoniker": "TestAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Program.cs",
-              "RelativeToolTip": "TestAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:32:55.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Database\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\Models\\User.cs",
-              "RelativeToolTip": "Database\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:22:08.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Objective.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\Models\\Objective.cs",
-              "RelativeDocumentMoniker": "Database\\Models\\Objective.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\Models\\Objective.cs",
-              "RelativeToolTip": "Database\\Models\\Objective.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:22:00.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "TestAPI\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Services\\UserService.cs",
-              "RelativeToolTip": "TestAPI\\Services\\UserService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:21:31.006Z",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "TestAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\appsettings.json",
+              "RelativeToolTip": "TestAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-17T07:39:51.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ObjectiveService.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Services\\ObjectiveService.cs",
-              "RelativeDocumentMoniker": "TestAPI\\Services\\ObjectiveService.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Services\\ObjectiveService.cs",
-              "RelativeToolTip": "TestAPI\\Services\\ObjectiveService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Title": "DatabaseSettings.cs",
+              "DocumentMoniker": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\Models\\DatabaseSettings.cs",
+              "RelativeDocumentMoniker": "Database\\Models\\DatabaseSettings.cs",
+              "ToolTip": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\Models\\DatabaseSettings.cs",
+              "RelativeToolTip": "Database\\Models\\DatabaseSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:21:19.41Z",
+              "WhenOpened": "2025-03-17T07:39:43.305Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "TestAPI\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "TestAPI\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TestAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\Program.cs",
+              "RelativeToolTip": "TestAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:19:11.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ObjectiveController.cs",
-              "DocumentMoniker": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Controllers\\ObjectiveController.cs",
-              "RelativeDocumentMoniker": "TestAPI\\Controllers\\ObjectiveController.cs",
-              "ToolTip": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\Controllers\\ObjectiveController.cs",
-              "RelativeToolTip": "TestAPI\\Controllers\\ObjectiveController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T12:19:45.967Z",
+              "WhenOpened": "2025-03-17T07:29:16.454Z",
               "EditorCaption": ""
             }
           ]

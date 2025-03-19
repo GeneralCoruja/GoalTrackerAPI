@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\TestAPI.csproj": {}
+    "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\TestAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\TestAPI.Database.csproj": {
+    "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\TestAPI.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\TestAPI.Database.csproj",
+        "projectUniqueName": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\TestAPI.Database.csproj",
         "projectName": "TestAPI.Database",
-        "projectPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\TestAPI.Database.csproj",
-        "packagesPath": "C:\\Users\\Diomo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\obj\\",
+        "projectPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\TestAPI.Database.csproj",
+        "packagesPath": "C:\\Users\\dhcs1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Diomo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dhcs1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,15 +44,27 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[3.2.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.3.1, )"
             }
           },
           "imports": [
@@ -71,24 +83,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\TestAPI.csproj": {
+    "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\TestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\TestAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\TestAPI.csproj",
         "projectName": "TestAPI",
-        "projectPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\TestAPI.csproj",
-        "packagesPath": "C:\\Users\\Diomo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\TestAPI\\obj\\",
+        "projectPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\TestAPI.csproj",
+        "packagesPath": "C:\\Users\\dhcs1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\TestAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Diomo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dhcs1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -103,8 +115,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\TestAPI.Database.csproj": {
-                "projectPath": "C:\\Users\\Diomo\\source\\repos\\TestAPI\\Database\\TestAPI.Database.csproj"
+              "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\TestAPI.Database.csproj": {
+                "projectPath": "C:\\Users\\dhcs1\\repos\\GoalTrackerAPI\\Database\\TestAPI.Database.csproj"
               }
             }
           }
@@ -119,12 +131,24 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "MongoDB.Bson": {
               "target": "Package",
               "version": "[3.2.1, )"
@@ -135,7 +159,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[7.3.1, )"
             }
           },
           "imports": [
@@ -157,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
