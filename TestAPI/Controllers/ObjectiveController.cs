@@ -17,15 +17,16 @@
         }
 
         [HttpGet]
-        public async Task<List<Objective>> Get() =>
-            await _objectiveService.GetAsync();
+        public async Task<IEnumerable<Objective>> Get() =>
+            await _objectiveService.GetAllAsync();
 
 
         [HttpPost]
         public async Task<IActionResult> Post(Objective newObjective)
         {
-            await _objectiveService.CreateAsync(newObjective);
-            return CreatedAtAction(nameof(Get), new { id = newObjective.Id }, newObjective);
+            //await _objectiveService.CreateAsync(newObjective);
+            //return CreatedAtAction(nameof(Get), new { id = newObjective.Id }, newObjective);
+            return Ok();
         }
     }
 }

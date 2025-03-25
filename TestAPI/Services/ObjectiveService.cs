@@ -1,30 +1,19 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using TestAPI.Database.Models;
-
-namespace TestAPI.Services
+﻿namespace TestAPI.Services
 {
+    using TestAPI.Database;
+    using TestAPI.Database.Models;
+
     public class ObjectiveService
     {
-        const string DATABASE_NAME = "objectives";
-        private readonly IMongoCollection<Objective> _objectiveCollection;
-
-        public ObjectiveService(
-            IOptions<DatabaseSettings> DatabaseSettings)
+        private MongoDatabase _database;
+        public ObjectiveService(MongoDatabase database)
         {
-            var mongoClient = new MongoClient(
-                DatabaseSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(DATABASE_NAME);
-
-            _objectiveCollection = mongoDatabase.GetCollection<Objective>(
-                DatabaseSettings.Value.UsersCollection);
+            _database = database;
         }
 
-        public async Task<List<Objective>> GetAsync() =>
-        await _objectiveCollection.Find(_ => true).ToListAsync();
-
-        public async Task CreateAsync(Objective newBook) =>
-        await _objectiveCollection.InsertOneAsync(newBook);
+        public async Task<IEnumerable<Objective>> GetAllAsync()
+        {
+            return await _database.Objectives.GetAllAsync();
+        }
     }
 }

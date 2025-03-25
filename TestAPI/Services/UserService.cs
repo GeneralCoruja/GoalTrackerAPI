@@ -1,38 +1,21 @@
-﻿namespace TestAPI.Services;
-
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using TestAPI.Database.Models;
-
-public class UserService
+﻿namespace TestAPI.Services
 {
-    const string DATABASE_NAME = "users";
-    private readonly IMongoCollection<User> _userCollection;
+    using System.Security.Cryptography;
+    using System.Text;
+    using TestAPI.Database;
+    using TestAPI.Database.Models;
+    using TestAPI.Dtos;
 
-    public UserService(
-        IOptions<DatabaseSettings> DatabaseSettings)
+    public class UserService
     {
-        var mongoClient = new MongoClient(
-            DatabaseSettings.Value.ConnectionString);
+        private MongoDatabase _database;
+        public UserService(MongoDatabase database)
+        {
+            _database = database;
+        }
 
-        var mongoDatabase = mongoClient.GetDatabase(DATABASE_NAME);
-
-        _userCollection = mongoDatabase.GetCollection<User>(
-            DatabaseSettings.Value.UsersCollection);
+        public async Task<IEnumerable<User>> GetAllAsync() {
+            return await _database.Users.GetAllAsync();
+        }
     }
-
-    public async Task<List<User>> GetAsync() =>
-        await _userCollection.Find(_ => true).ToListAsync();
-
-    public async Task<User?> GetAsync(string id) =>
-        await _userCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-
-    public async Task CreateAsync(User newBook) =>
-        await _userCollection.InsertOneAsync(newBook);
-
-    public async Task UpdateAsync(string id, User updatedBook) =>
-        await _userCollection.ReplaceOneAsync(x => x.Id == id, updatedBook);
-
-    public async Task RemoveAsync(string id) =>
-        await _userCollection.DeleteOneAsync(x => x.Id == id);
 }

@@ -1,10 +1,12 @@
 ﻿namespace TestAPI.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using TestAPI.Database.Models;
     using TestAPI.Services;
 
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class UserController : Controller
     {
@@ -14,20 +16,22 @@
         {
             _userService = userService;
         }
-        [HttpGet]
-        public async Task<List<User>> Get() =>
-            await _userService.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
+        [HttpGet]
+        public async Task<IEnumerable<User>> GetAll() {
+            Console.WriteLine(User);
+            return await _userService.GetAllAsync();
+        }
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<User>> Get(string id)
         {
-            var user = await _userService.GetAsync(id);
+            var user = new User();//await _userService.GetById(id);
 
             if (user is null)
             {
                 return NotFound();
             }
-
             return user;
         }
     }

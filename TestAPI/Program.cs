@@ -1,34 +1,39 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
-using TestAPI.Context;
+using TestAPI.Database;
 using TestAPI.Database.Models;
 using TestAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAuthentication(x => {
+    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x => {
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidIssuer = "issuerCert",
+        ValidAudience = "app",
+        IssuerSigningKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TOKENSECRETTOKENSECRETTOKENSECRETTOKENSECRET")),
+        ValidateAudience = true,
+        ValidateIssuer = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey= true,
+    };
+});
 
-builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme)
-    .AddIdentityCookies();
-builder.Services.AddAuthorizationBuilder();
-
-builder.Services.AddDbContext<AppDbContext>(
-    options => options.UseInMemoryDatabase("AppDb"));
-builder.Services.AddIdentityCore<MyUser>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddApiEndpoints();
-
-
+builder.Services.AddAuthorization();
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "You api title", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GoalTrackr API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
@@ -58,18 +63,16 @@ builder.Services.AddSwaggerGen(c =>
             new List<string>()
           }
         });
-    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    //c.IncludeXmlComments(xmlPath);
 });
 
-// Add database config to the container.
-builder.Services.Configure<DatabaseSettings>(
-    builder.Configuration.GetSection("Database"));
+// Add database
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("Database"));
+builder.Services.AddSingleton<MongoDatabase>();
 
 // Add services
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<ObjectiveService>();
+builder.Services.AddSingleton<IdentityService>();
 
 
 var app = builder.Build();
@@ -83,9 +86,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapIdentityApi<MyUser>();
+
 
 app.MapControllers();
 
