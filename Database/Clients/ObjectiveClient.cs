@@ -1,7 +1,7 @@
-﻿namespace TestAPI.Database.Clients
+﻿namespace GoalTrackingAPI.Database.Clients
 {
     using MongoDB.Driver;
-    using TestAPI.Database.Models;
+    using GoalTrackingAPI.Database.Models;
 
     public class ObjectiveClient : Client<Objective>
     {

@@ -1,8 +1,8 @@
-﻿namespace TestAPI.Controllers
+﻿namespace GoalTrackingAPI.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
-    using TestAPI.Database.Models;
-    using TestAPI.Services;
+    using GoalTrackingAPI.Database.Models;
+    using GoalTrackingAPI.Services;
 
     [ApiController]
     [Route("api/[controller]")]

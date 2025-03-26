@@ -1,7 +1,7 @@
-﻿namespace TestAPI.Services
+﻿namespace GoalTrackingAPI.Services
 {
-    using TestAPI.Database;
-    using TestAPI.Database.Models;
+    using GoalTrackingAPI.Database;
+    using GoalTrackingAPI.Database.Models;
 
     public class ObjectiveService
     {

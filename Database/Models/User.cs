@@ -1,4 +1,4 @@
-﻿namespace TestAPI.Database.Models
+﻿namespace GoalTrackingAPI.Database.Models
 {
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
@@ -29,6 +29,11 @@
 
         [BsonElement("isAdmin")]
         public bool IsAdmin { get; set; }
+        
+        [BsonElement("createdDate")]
+        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
 
+        [BsonElement("updatedDate")]
+        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
     }
 }

@@ -1,29 +1,38 @@
-﻿namespace TestAPI.Controllers
+﻿namespace GoalTrackingAPI.Controllers
 {
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
     using System.Text;
-    using DocumentFormat.OpenXml.Spreadsheet;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
-    using TestAPI.Database;
-    using TestAPI.Database.Models;
-    using TestAPI.Dtos;
-    using TestAPI.Services;
+    using GoalTrackingAPI.Database;
+    using GoalTrackingAPI.Database.Models;
+    using GoalTrackingAPI.Dtos;
+    using GoalTrackingAPI.Identity;
+    using GoalTrackingAPI.Services;
 
     [ApiController]
     [Route("identity")]
     public class IdentityController : Controller
     {
-        private const string TokenSecret = "TOKENSECRETTOKENSECRETTOKENSECRETTOKENSECRET";
-        private static readonly TimeSpan TokenLifeTime = TimeSpan.FromMinutes(60);
+        private readonly string TokenSecret;
+        private readonly TimeSpan TokenLifeTime;
+        private readonly string TokenIssuer;
+        private readonly string TokenAudience;
+
         private MongoDatabase _database;
         private IdentityService _identityService;
 
-        public IdentityController(MongoDatabase database, IdentityService identityService)
+        public IdentityController(IOptions<JwtTokenConfig> tokenConfig, MongoDatabase database, IdentityService identityService)
         {
             _database = database;
             _identityService = identityService;
+
+            TokenSecret = tokenConfig.Value.Key;
+            TokenLifeTime = TimeSpan.FromMinutes(tokenConfig.Value.TokenLifetime);
+            TokenIssuer = tokenConfig.Value.Issuer;
+            TokenAudience = tokenConfig.Value.Audience;
         }
 
         [HttpPost("login")]
@@ -79,6 +88,11 @@
                 new Claim("lastname", user.Lastname)
             };
 
+            if (user.IsAdmin) 
+            {
+                claims.Add(new Claim(Claims.Admin, "true"));
+            }
+
             // // Custom Claims
             //foreach (var claimPair in request.CustomClaims) {
             //    var jsonElement = (JsonElement)claimPair.Value;
@@ -98,8 +112,8 @@
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.Add(TokenLifeTime),
-                Issuer = "issuerCert",
-                Audience = "app",
+                Issuer = TokenIssuer,
+                Audience = TokenAudience,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             };
 

@@ -1,10 +1,10 @@
-﻿namespace TestAPI.Services
+﻿namespace GoalTrackingAPI.Services
 {
     using System.Security.Cryptography;
     using System.Text;
-    using TestAPI.Database;
-    using TestAPI.Database.Models;
-    using TestAPI.Dtos;
+    using GoalTrackingAPI.Database;
+    using GoalTrackingAPI.Database.Models;
+    using GoalTrackingAPI.Dtos;
 
     public class IdentityService
     {

@@ -1,4 +1,4 @@
-﻿namespace TestAPI.Database.Models
+﻿namespace GoalTrackingAPI.Database.Models
 {
     public class DatabaseSettings
     {

@@ -1,4 +1,4 @@
-﻿namespace TestAPI.Database.Clients
+﻿namespace GoalTrackingAPI.Database.Clients
 {
     using MongoDB.Driver;
 

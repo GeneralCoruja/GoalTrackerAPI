@@ -1,4 +1,4 @@
-﻿namespace TestAPI.Database.Models
+﻿namespace GoalTrackingAPI.Database.Models
 {
     using MongoDB.Bson.Serialization.Attributes;
     using MongoDB.Bson;
@@ -19,6 +19,6 @@
         public bool Description { get; set; }
 
         [BsonElement("occurence")]
-        public string Occurence { get; set; } = "Daily";
+        public string Occurence { get; set; }
     }
 }

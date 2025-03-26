@@ -1,4 +1,4 @@
-﻿namespace TestAPI.Dtos
+﻿namespace GoalTrackingAPI.Dtos
 {
     public class RegistrationDto
     {

@@ -1,9 +1,9 @@
-﻿namespace TestAPI.Database
+﻿namespace GoalTrackingAPI.Database
 {
     using Microsoft.Extensions.Options;
     using Models;
     using MongoDB.Driver;
-    using TestAPI.Database.Clients;
+    using GoalTrackingAPI.Database.Clients;
 
     public class MongoDatabase
     {
