@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Database\GoalTrackingAPI.Database.csproj" />
+    <ProjectReference Include="..\GoalTrackingAPI.Database\GoalTrackingAPI.Database.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalTrackingAPI", "GoalTrackingAPI\GoalTrackingAPI.csproj", "{0A0321E2-2BAD-402B-AD32-37745B54CEBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalTrackingAPI.Database", "Database\GoalTrackingAPI.Database.csproj", "{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalTrackingAPI.Database", "GoalTrackingAPI.Database\GoalTrackingAPI.Database.csproj", "{63BD8E5F-3B14-46E0-94EB-7EF5131C3FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
