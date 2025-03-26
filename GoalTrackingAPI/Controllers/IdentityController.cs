@@ -8,9 +8,9 @@
     using Microsoft.IdentityModel.Tokens;
     using GoalTrackingAPI.Database;
     using GoalTrackingAPI.Database.Models;
-    using GoalTrackingAPI.Dtos;
     using GoalTrackingAPI.Identity;
     using GoalTrackingAPI.Services;
+    using GoalTrackingAPI.Dtos.Identity;
 
     [ApiController]
     [Route("identity")]
@@ -36,16 +36,19 @@
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> LoginUser([FromBody] LoginDto request) {
+        public async Task<IActionResult> LoginUser([FromBody] LoginDto request)
+        {
             //fetch user by username
             var user = await _database.Users.GetByUsernameAsync(request.Username);
-            if (user == null) {
+            if (user == null)
+            {
                 return BadRequest();
             }
 
             //validate if password is correct before returning token
             var validatePassword = await _identityService.ValidatePasswordHash(request.Password, user.Password);
-            if (validatePassword) {
+            if (validatePassword)
+            {
                 return Ok(GenerateToken(user));
             }
 
@@ -63,7 +66,8 @@
             }
 
             // create user
-            var user = new User { 
+            var user = new User
+            {
                 Username = request.Username,
                 Firstname = request.Firstname,
                 Lastname = request.Lastname,
@@ -75,7 +79,9 @@
             return Ok(GenerateToken(user));
         }
 
-        private string GenerateToken(User user) {
+        // TEMPORARY: token gen logic needs to be moved somewhere else
+        private string GenerateToken(User user)
+        {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(TokenSecret);
 
@@ -88,25 +94,10 @@
                 new Claim("lastname", user.Lastname)
             };
 
-            if (user.IsAdmin) 
+            if (user.IsAdmin)
             {
                 claims.Add(new Claim(Claims.Admin, "true"));
             }
-
-            // // Custom Claims
-            //foreach (var claimPair in request.CustomClaims) {
-            //    var jsonElement = (JsonElement)claimPair.Value;
-            //    var valueType = jsonElement.ValueKind switch
-            //    {
-            //        JsonValueKind.True => ClaimValueTypes.Boolean,
-            //        JsonValueKind.False => ClaimValueTypes.Boolean,
-            //        JsonValueKind.Number => ClaimValueTypes.Double,
-            //        _ => ClaimValueTypes.String
-            //    };
-
-            //    var claim = new Claim(claimPair.Key, claimPair.Value.ToString()!, valueType);
-            //    claims.Add(claim);
-            //}
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

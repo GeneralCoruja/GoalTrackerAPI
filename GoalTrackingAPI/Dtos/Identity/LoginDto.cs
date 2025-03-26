@@ -1,4 +1,4 @@
-﻿namespace GoalTrackingAPI.Dtos
+﻿namespace GoalTrackingAPI.Dtos.Identity
 {
     public class LoginDto
     {

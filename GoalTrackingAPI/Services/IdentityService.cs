@@ -4,7 +4,7 @@
     using System.Text;
     using GoalTrackingAPI.Database;
     using GoalTrackingAPI.Database.Models;
-    using GoalTrackingAPI.Dtos;
+    using GoalTrackingAPI.Dtos.Identity;
 
     public class IdentityService
     {

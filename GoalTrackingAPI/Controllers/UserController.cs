@@ -5,6 +5,8 @@
     using GoalTrackingAPI.Database.Models;
     using GoalTrackingAPI.Identity;
     using GoalTrackingAPI.Services;
+    using GoalTrackingAPI.Dtos.Users;
+    using System.Linq;
 
     [ApiController]
     [Authorize]
@@ -19,19 +21,21 @@
         }
 
         [HttpGet]
-        public async Task<IEnumerable<User>> GetAll() {
-            return await _userService.GetAllAsync();
+        public async Task<IEnumerable<UserDto>> GetAll()
+        {
+            return (await _userService.GetAllAsync()).Select(x => x.ToDTO());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> Get(string userId)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<UserDto>> Get(string username)
         {
-            var user = await _userService.GetById(userId);
+            var user = await _userService.GetByUsername(username);
             if (user is null)
             {
                 return NotFound();
             }
-            return user;
+
+            return user.ToDTO();
         }
 
         [HttpDelete()]
@@ -42,7 +46,8 @@
             {
                 await _userService.DeleteByUsername(username);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 return StatusCode(500);
             }
 
