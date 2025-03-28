@@ -27,8 +27,10 @@
         }
 
         // create new user
-        public async Task CreateAsync(User newUser) =>
+        public async Task CreateAsync(User newUser)
+        {
             await _collection.InsertOneAsync(newUser);
+        }
 
         // delete user by username
         public async Task DeleteAsync(string username)

@@ -1,7 +1,7 @@
-﻿namespace GoalTrackingAPI.Services
+﻿namespace GoalTrackingAPI.Domain.Services
 {
     using GoalTrackingAPI.Database;
-    using GoalTrackingAPI.Database.Models;
+    using GoalTrackingAPI.Domain.Models.Users;
 
     public class UserService
     {
@@ -12,15 +12,15 @@
         }
 
         public async Task<IEnumerable<User>> GetAllAsync() {
-            return await _database.Users.GetAllAsync();
+            return _database.Users.GetAllAsync().Result.Select(x => x.ToDomain());
         }
 
         public async Task<User> GetById(string userId) {
-            return await _database.Users.GetByIdAsync(userId);
+            return _database.Users.GetByIdAsync(userId).Result.ToDomain();
         }
 
         public async Task<User> GetByUsername(string username) {
-            return await _database.Users.GetByUsernameAsync(username);
+            return _database.Users.GetByUsernameAsync(username).Result.ToDomain();
         }
 
         public async Task DeleteByUsername(string username) {

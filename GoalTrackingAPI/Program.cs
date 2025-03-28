@@ -1,8 +1,8 @@
 using GoalTrackingAPI.Configuration;
 using GoalTrackingAPI.Database;
 using GoalTrackingAPI.Database.Models;
+using GoalTrackingAPI.Domain.Services;
 using GoalTrackingAPI.Identity;
-using GoalTrackingAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

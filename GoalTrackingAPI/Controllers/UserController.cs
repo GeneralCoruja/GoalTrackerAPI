@@ -1,12 +1,12 @@
 ﻿namespace GoalTrackingAPI.Controllers
 {
+    using System.Linq;
+    using GoalTrackingAPI.Database.Models;
+    using GoalTrackingAPI.Domain.Services;
+    using GoalTrackingAPI.Dtos.Users;
+    using GoalTrackingAPI.Identity;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using GoalTrackingAPI.Database.Models;
-    using GoalTrackingAPI.Identity;
-    using GoalTrackingAPI.Services;
-    using GoalTrackingAPI.Dtos.Users;
-    using System.Linq;
 
     [ApiController]
     [Authorize]

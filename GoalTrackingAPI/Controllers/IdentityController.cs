@@ -3,14 +3,13 @@
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
     using System.Text;
+    using GoalTrackingAPI.Domain.Models.Users;
+    using GoalTrackingAPI.Domain.Services;
+    using GoalTrackingAPI.Dtos.Identity;
+    using GoalTrackingAPI.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Options;
     using Microsoft.IdentityModel.Tokens;
-    using GoalTrackingAPI.Database;
-    using GoalTrackingAPI.Database.Models;
-    using GoalTrackingAPI.Identity;
-    using GoalTrackingAPI.Services;
-    using GoalTrackingAPI.Dtos.Identity;
 
     [ApiController]
     [Route("identity")]
@@ -21,13 +20,13 @@
         private readonly string TokenIssuer;
         private readonly string TokenAudience;
 
-        private MongoDatabase _database;
         private IdentityService _identityService;
+        private UserService _userService;
 
-        public IdentityController(IOptions<JwtTokenConfig> tokenConfig, MongoDatabase database, IdentityService identityService)
+        public IdentityController(IOptions<JwtTokenConfig> tokenConfig, UserService userService, IdentityService identityService)
         {
-            _database = database;
             _identityService = identityService;
+            _userService = userService;
 
             TokenSecret = tokenConfig.Value.Key;
             TokenLifeTime = TimeSpan.FromMinutes(tokenConfig.Value.TokenLifetime);
@@ -39,7 +38,7 @@
         public async Task<IActionResult> LoginUser([FromBody] LoginDto request)
         {
             //fetch user by username
-            var user = await _database.Users.GetByUsernameAsync(request.Username);
+            var user = await _userService.GetByUsername(request.Username);
             if (user == null)
             {
                 return BadRequest();
@@ -58,23 +57,11 @@
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] RegistrationDto request)
         {
-            // validate the username is unique
-            var existingUser = await _database.Users.GetByUsernameAsync(request.Username);
-            if (existingUser != null)
+            var user = await _identityService.RegisterUser(request.ToDomain());
+            if (user == null)
             {
                 return BadRequest();
             }
-
-            // create user
-            var user = new User
-            {
-                Username = request.Username,
-                Firstname = request.Firstname,
-                Lastname = request.Lastname,
-                Password = _identityService.ComputeHash(request.Password),
-                Email = request.Email,
-            };
-            await _database.Users.CreateAsync(user);
 
             return Ok(GenerateToken(user));
         }
@@ -90,8 +77,8 @@
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim("userId", user.Id.ToString()),
-                new Claim("firstname", user.Firstname),
-                new Claim("lastname", user.Lastname)
+                new Claim("firstname", user.FirstName),
+                new Claim("lastname", user.LastName)
             };
 
             if (user.IsAdmin)

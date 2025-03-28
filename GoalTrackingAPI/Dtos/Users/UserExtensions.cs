@@ -1,16 +1,17 @@
-﻿using GoalTrackingAPI.Database.Models;
-
-namespace GoalTrackingAPI.Dtos.Users
+﻿namespace GoalTrackingAPI.Dtos.Users
 {
+    using Domain = Domain.Models.Users;
+
     public static class UserExtensions
     {
-        public static UserDto ToDTO(this User user)
+        public static UserDto ToDTO(this Domain.User user)
         {
             return new UserDto
             {
                 Id = user.Id,
-                Name = $"{user.Firstname} {user.Lastname}",
-                Username = user.Username,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Username = user.UserName,
             };
         }
     }

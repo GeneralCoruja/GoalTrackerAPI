@@ -7,18 +7,27 @@
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public Guid Id { get; set; }
 
         [BsonElement("userId")]
-        public int? UserID { get; set; }
+        public Guid UserId { get; set; }
 
         [BsonElement("title")]
         public string Title { get; set; } = string.Empty;
         
         [BsonElement("description")]
-        public bool Description { get; set; }
+        public string Description { get; set; }
 
         [BsonElement("occurence")]
         public string Occurence { get; set; }
+
+        [BsonElement("startDate")]
+        public DateTime StartDate { get; set; }
+
+        [BsonElement("EndDate")]
+        public DateTime EndDate { get; set; }
+
+        [BsonElement("CreatedDate")]
+        public DateTime CreatedDate { get; set; }
     }
 }

@@ -7,10 +7,7 @@
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
-
-        [BsonElement("id")]
-        public int? InternalID { get; set; }
+        public Guid Id { get; set; }
 
         [BsonElement("username")]
         public string Username { get; set; } = string.Empty;
@@ -31,9 +28,9 @@
         public bool IsAdmin { get; set; }
         
         [BsonElement("createdDate")]
-        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
         [BsonElement("updatedDate")]
-        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedDate { get; set; } = DateTime.UtcNow;
     }
 }

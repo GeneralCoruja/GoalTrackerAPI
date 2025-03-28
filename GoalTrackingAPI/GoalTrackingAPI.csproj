@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GoalTrackingAPI.Database\GoalTrackingAPI.Database.csproj" />
+    <Folder Include="Validators\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\" />
+    <ProjectReference Include="..\GoalTrackingAPI.Domain\GoalTrackingAPI.Domain.csproj" />
   </ItemGroup>
 
 </Project>
